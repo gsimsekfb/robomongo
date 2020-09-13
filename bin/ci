@@ -5,7 +5,7 @@ echo
 echo "---------- Starting bin/ci"
 
 # #################################### x. Env. Setup #########################################
-echo "--------- x. Env. Setup"
+echo "---------- 1. Env. Setup"
 
 # ---
 SCRIPTS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" 
@@ -29,8 +29,11 @@ wget --quiet https://drive.google.com/uc?id=1nKOEgnklgZKAAQ1z4bfjj0Ejm0MOpAOd -O
 echo "-- tar xf -q openssl-1.0.2o-built-lin.tar.gz"
 tar xf openssl-1.0.2o-built-lin.tar.gz
 
-echo "-- ls -lh"
+echo "-- ls -lh "
 ls -lh
+
+echo "-- ls -lh openssl-1.0.2o"
+ls -lh openssl-1.0.2o
 
 # --------------------------------- others
 # echo "-- ls -lh"

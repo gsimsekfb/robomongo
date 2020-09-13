@@ -1,15 +1,15 @@
 os:
-  - linux
+  - linux   # https://docs.travis-ci.com/user/reference/linux/
   # - osx
   # - windows
 
-dist: xenial
+dist: focal   # Ubuntu 20.04, gcc 9.3.0
 sudo: require
 language: cpp
 
 script:
-  - bash bin/clean
-  - bash bin/configure 
+  - bash bin/clean  
+  - bash bin/ci
   # - bash bin/build
   # - bash bin/run-unit-tests 
 

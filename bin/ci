@@ -21,8 +21,8 @@ pwd
 echo; echo "-- pip install gdown "
 pip install gdown
 
-echo; echo "sudo apt-get update"
-sudo apt-get update
+echo; echo "sudo apt-get -qq update"
+sudo apt-get -qq update
 
 echo; echo "sudo apt-get install libgl-dev"
 sudo apt-get install libgl-dev
@@ -66,6 +66,10 @@ ls -lh
 # ---
 echo; echo "-- bin/configure"
 bin/configure 
+
+echo; echo "-- bin/build"
+bin/build
+
 
 # --------------------------------- others
 # echo "-- ls -lh"

@@ -21,11 +21,16 @@ pwd
 echo; echo "-- pip -q install gdown "
 pip -q install gdown
 
-echo; echo "-- sudo apt-get -qq update"
+echo "-- sudo apt-get -qq update"
 sudo apt-get -qq update
 
-echo; echo "-- sudo apt-get -qq install libgl-dev"
-sudo apt-get -qq install libgl-dev
+echo "-- sudo apt-get install libgl-dev > /dev/null"
+sudo apt-get install libgl-dev > /dev/null
+
+echo "-- sudo apt-get install cppcheck > /dev/null"
+sudo apt-get install cppcheck > /dev/null
+echo "-- cppcheck --version"  
+cppcheck --version
 
 # ---
 export ROBOMONGO_CMAKE_PREFIX_PATH="$PROJECT_DIR/Qt5.9.3/5.9.3/gcc_64/;$PROJECT_DIR/robo-shell;$PROJECT_DIR/openssl-1.0.2o"
@@ -59,6 +64,9 @@ mkdir -p robo-shell/build
 echo "-- tar xf robo-shell-4.2-lin-opt.tar.gz -C robo-shell/build"
 tar xf robo-shell-4.2-lin-opt.tar.gz -C robo-shell/build
 
+#### Block comment start
+: <<'END'
+
 # ---
 echo; echo "-- bin/configure"
 bin/configure 
@@ -69,6 +77,9 @@ bin/configure
 # ---
 echo; echo "-- free -m"
 free -m
+
+#### Block comment end
+END
 
 # --------------------------------- others
 # echo "-- ls -lh"

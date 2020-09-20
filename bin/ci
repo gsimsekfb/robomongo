@@ -44,8 +44,8 @@ echo $ROBOMONGO_CMAKE_PREFIX_PATH
 # echo "-- ls -lh "
 # ls -lh
 
-echo "-- pip -V "
-pip -V
+echo "-- pip install gdown "
+pip install gdown
 
 echo "-- gdown -V "
 gdown -V

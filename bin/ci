@@ -32,6 +32,12 @@ sudo apt-get install cppcheck > /dev/null
 echo "-- cppcheck --version"  
 cppcheck --version
 
+echo "-- cppcheck --enable=all src/robomongo/utils/"  
+cppcheck --enable=all src/robomongo/utils/
+
+#### ---------- Block comment start
+: <<'END'
+
 # ---
 export ROBOMONGO_CMAKE_PREFIX_PATH="$PROJECT_DIR/Qt5.9.3/5.9.3/gcc_64/;$PROJECT_DIR/robo-shell;$PROJECT_DIR/openssl-1.0.2o"
 echo
@@ -64,9 +70,6 @@ mkdir -p robo-shell/build
 echo "-- tar xf robo-shell-4.2-lin-opt.tar.gz -C robo-shell/build"
 tar xf robo-shell-4.2-lin-opt.tar.gz -C robo-shell/build
 
-#### Block comment start
-: <<'END'
-
 # ---
 echo; echo "-- bin/configure"
 bin/configure 
@@ -78,15 +81,17 @@ bin/configure
 echo; echo "-- free -m"
 free -m
 
-#### Block comment end
+#### ---------- Block comment end
 END
 
-# --------------------------------- others
+# --------------------------------- Cheatsheet
 # echo "-- ls -lh"
 # ls -lh
 
-# echo "-- wget --quiet https://drive.google.com/uc?id=1nKOEgnklgZKAAQ1z4bfjj0Ejm0MOpAOd -O xx.zip"
-# wget --quiet https://drive.google.com/uc?id=1nKOEgnklgZKAAQ1z4bfjj0Ejm0MOpAOd -O xx.zip
-# echo "-- unzip -q xx.zip"
-# unzip -q xx.zip
+#### ---------- Block_Comment_Start
+: <<'END'
+#### ---------- Block_Comment_End
+END
+
+
 

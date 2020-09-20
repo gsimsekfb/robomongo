@@ -7,7 +7,7 @@ echo "---------- Starting bin/ci"
 # #################################### x. Env. Setup #########################################
 echo "---------- 1. Env. Setup"
 
-# ---
+# --- Go to project_dir
 SCRIPTS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" 
 # Get root directory of project
 PROJECT_DIR=$(dirname $SCRIPTS_DIR)            
@@ -16,6 +16,10 @@ echo "-- cd $PROJECT_DIR"
 cd $PROJECT_DIR
 echo "-- pwd"
 pwd
+
+# --- Install req. packages
+echo "-- pip install gdown "
+pip install gdown
 
 # ---
 export ROBOMONGO_CMAKE_PREFIX_PATH="$PROJECT_DIR/Qt5.9.3/5.9.3/gcc_64/;$PROJECT_DIR/robo-shell;$PROJECT_DIR/openssl-1.0.2o"
@@ -30,10 +34,10 @@ echo $ROBOMONGO_CMAKE_PREFIX_PATH
 # tar xf openssl-1.0.2o-built-lin.tar.gz
 
 # --- DL pre-built Qt
-# echo "-- gdown https://drive.google.com/uc?id=1tvtXWvNkF1hxFYlVi5YB2AVEyysJU5Dc"
-# gdown https://drive.google.com/uc?id=1tvtXWvNkF1hxFYlVi5YB2AVEyysJU5Dc
-# echo "-- tar xf -q qt_5.9.3_gcc_64.tar.gz"
-# tar xf qt_5.9.3_gcc_64.tar.gz
+echo "-- gdown https://drive.google.com/uc?id=1tvtXWvNkF1hxFYlVi5YB2AVEyysJU5Dc"
+gdown https://drive.google.com/uc?id=1tvtXWvNkF1hxFYlVi5YB2AVEyysJU5Dc
+echo "-- tar xf -q qt_5.9.3_gcc_64.tar.gz"
+tar xf qt_5.9.3_gcc_64.tar.gz
 
 # --- DL pre-built robo-shell
 # echo "-- wget --quiet https://drive.google.com/uc?id=15JrsRiotDE0NZx6eV-YySRH6tupiVCiK -O robo-shell-4.2-lin-opt.tar.gz"
@@ -41,14 +45,8 @@ echo $ROBOMONGO_CMAKE_PREFIX_PATH
 # echo "-- tar xf -q robo-shell-4.2-lin-opt.tar.gz"
 # tar xf robo-shell-4.2-lin-opt.tar.gz
 
-# echo "-- ls -lh "
-# ls -lh
-
-echo "-- pip install gdown "
-pip install gdown
-
-echo "-- gdown -V "
-gdown -V
+echo "-- ls -lh "
+ls -lh
 
 
 # --------------------------------- others

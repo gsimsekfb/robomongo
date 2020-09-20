@@ -50,14 +50,20 @@ tar xf qt_5.9.3_gcc_64.tar.gz -C Qt5.9.3/5.9.3
 # --- DL pre-built robo-shell
 echo "-- gdown https://drive.google.com/uc?id=15JrsRiotDE0NZx6eV-YySRH6tupiVCiK"
 gdown https://drive.google.com/uc?id=15JrsRiotDE0NZx6eV-YySRH6tupiVCiK
-echo "-- mkdir -p robo-shell/build"
+echo; echo "git clone robo-shell... "
+git clone https://github.com/paralect/robomongo-shell.git
+echo; echo "-- mv robomongo-shell robo-shell"
+mv robomongo-shell robo-shell
+echo; echo "-- mkdir -p robo-shell/build"
 mkdir -p robo-shell/build
 echo "-- tar xf robo-shell-4.2-lin-opt.tar.gz -C robo-shell/build"
 tar xf robo-shell-4.2-lin-opt.tar.gz -C robo-shell/build
 
+# ---
 echo; echo "-- ls -lh "
 ls -lh
 
+# ---
 echo; echo "-- bin/configure"
 bin/configure 
 

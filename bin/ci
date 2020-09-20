@@ -23,17 +23,30 @@ echo
 echo "-- ROBOMONGO_CMAKE_PREFIX_PATH:"
 echo $ROBOMONGO_CMAKE_PREFIX_PATH    
 
-# ---
-echo "-- wget --quiet https://drive.google.com/uc?id=1nKOEgnklgZKAAQ1z4bfjj0Ejm0MOpAOd -O openssl-1.0.2o-built-lin.tar.gz"
-wget --quiet https://drive.google.com/uc?id=1nKOEgnklgZKAAQ1z4bfjj0Ejm0MOpAOd -O openssl-1.0.2o-built-lin.tar.gz
-echo "-- tar xf -q openssl-1.0.2o-built-lin.tar.gz"
-tar xf openssl-1.0.2o-built-lin.tar.gz
+# --- DL pre-built openssl 
+# echo "-- wget --quiet https://drive.google.com/uc?id=1nKOEgnklgZKAAQ1z4bfjj0Ejm0MOpAOd -O openssl-1.0.2o-built-lin.tar.gz"
+# wget --quiet https://drive.google.com/uc?id=1nKOEgnklgZKAAQ1z4bfjj0Ejm0MOpAOd -O openssl-1.0.2o-built-lin.tar.gz
+# echo "-- tar xf -q openssl-1.0.2o-built-lin.tar.gz"
+# tar xf openssl-1.0.2o-built-lin.tar.gz
 
-echo "-- ls -lh "
-ls -lh
+# --- DL pre-built Qt
+# echo "-- gdown https://drive.google.com/uc?id=1tvtXWvNkF1hxFYlVi5YB2AVEyysJU5Dc"
+# gdown https://drive.google.com/uc?id=1tvtXWvNkF1hxFYlVi5YB2AVEyysJU5Dc
+# echo "-- tar xf -q qt_5.9.3_gcc_64.tar.gz"
+# tar xf qt_5.9.3_gcc_64.tar.gz
 
-echo "-- ls -lh openssl-1.0.2o"
-ls -lh openssl-1.0.2o
+# --- DL pre-built robo-shell
+# echo "-- wget --quiet https://drive.google.com/uc?id=15JrsRiotDE0NZx6eV-YySRH6tupiVCiK -O robo-shell-4.2-lin-opt.tar.gz"
+# wget --quiet https://drive.google.com/uc?id=15JrsRiotDE0NZx6eV-YySRH6tupiVCiK -O robo-shell-4.2-lin-opt.tar.gz
+# echo "-- tar xf -q robo-shell-4.2-lin-opt.tar.gz"
+# tar xf robo-shell-4.2-lin-opt.tar.gz
+
+# echo "-- ls -lh "
+# ls -lh
+
+echo "-- gdown -V "
+gdown -V
+
 
 # --------------------------------- others
 # echo "-- ls -lh"

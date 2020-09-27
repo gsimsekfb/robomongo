@@ -12,5 +12,5 @@ sudo apt-get install cppcheck > /dev/null
 echo "-- cppcheck --version"  
 cppcheck --version
 
-echo "-- cppcheck --enable=all src/robomongo/utils/"  
-cppcheck --enable=all src/robomongo/utils/
+echo; echo "-- cppcheck --enable=all src/robomongo/"  
+cppcheck --enable=all src/robomongo/

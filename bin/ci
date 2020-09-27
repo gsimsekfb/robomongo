@@ -4,7 +4,7 @@
 echo
 echo "---------- Starting bin/ci"
 
-# #################################### x. Env. Setup #########################################
+# #################################### x. Dev. Env. Setup #########################################
 echo "---------- 1. Env. Setup"
 
 # --- Go to project_dir
@@ -27,18 +27,7 @@ sudo apt-get -qq update
 echo "-- sudo apt-get install libgl-dev > /dev/null"
 sudo apt-get install libgl-dev > /dev/null
 
-echo "-- sudo apt-get install cppcheck > /dev/null"
-sudo apt-get install cppcheck > /dev/null
-echo "-- cppcheck --version"  
-cppcheck --version
-
-echo "-- cppcheck --enable=all src/robomongo/utils/"  
-cppcheck --enable=all src/robomongo/utils/
-
-#### ---------- Block comment start
-: <<'END'
-
-# ---
+# --- 
 export ROBOMONGO_CMAKE_PREFIX_PATH="$PROJECT_DIR/Qt5.9.3/5.9.3/gcc_64/;$PROJECT_DIR/robo-shell;$PROJECT_DIR/openssl-1.0.2o"
 echo
 echo "-- set ROBOMONGO_CMAKE_PREFIX_PATH:"
@@ -70,19 +59,18 @@ mkdir -p robo-shell/build
 echo "-- tar xf robo-shell-4.2-lin-opt.tar.gz -C robo-shell/build"
 tar xf robo-shell-4.2-lin-opt.tar.gz -C robo-shell/build
 
+# #################################### x. Build #########################################
+
 # ---
 echo; echo "-- bin/configure"
 bin/configure 
 
 # echo; echo "-- bin/build"
-# bin/build
+bin/build
 
 # ---
 echo; echo "-- free -m"
 free -m
-
-#### ---------- Block comment end
-END
 
 # --------------------------------- Cheatsheet
 # echo "-- ls -lh"

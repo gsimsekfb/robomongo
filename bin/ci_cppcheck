@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+echo
+echo "---------- Starting bin/ci_cppcheck"
+
+echo "-- sudo apt-get install cppcheck > /dev/null"
+sudo apt-get install cppcheck > /dev/null
+echo "-- cppcheck --version"  
+cppcheck --version
+
+echo "-- cppcheck --enable=all src/robomongo/utils/"  
+cppcheck --enable=all src/robomongo/utils/

@@ -3,8 +3,12 @@
 echo
 echo "---------- Starting bin/ci_cppcheck"
 
+echo "-- sudo apt-get -qq update"
+sudo apt-get -qq update
+
 echo "-- sudo apt-get install cppcheck > /dev/null"
 sudo apt-get install cppcheck > /dev/null
+
 echo "-- cppcheck --version"  
 cppcheck --version
 

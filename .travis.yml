@@ -9,9 +9,9 @@ language: cpp
 
 script:
   - bash bin/clean  
-  # - bash bin/ci_scan-build
+  - bash bin/ci_scan-build
   # - bash bin/ci_cppcheck
-  - bash bin/ci_temp   
+  # - bash bin/ci_temp   
   # - bash bin/ci 
   # - bash bin/run-unit-tests 
 

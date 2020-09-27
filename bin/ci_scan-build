@@ -1,0 +1,83 @@
+#!/usr/bin/env bash
+
+echo
+echo "---------- Starting bin/ci"
+
+# #################################### x. Dev. Env. Setup #########################################
+
+echo "---------- 1. Env. Setup"
+
+# --- Go to project_dir
+SCRIPTS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" 
+# Get root directory of project
+PROJECT_DIR=$(dirname $SCRIPTS_DIR)            
+echo
+echo "-- cd $PROJECT_DIR"
+cd $PROJECT_DIR
+echo "-- pwd"
+pwd
+
+# --- Install req. packages
+echo; echo "-- pip -q install gdown "
+pip -q install gdown
+
+echo "-- sudo apt-get -qq update"
+sudo apt-get -qq update
+
+echo "-- sudo apt-get install libgl-dev > /dev/null"
+sudo apt-get install libgl-dev > /dev/null
+
+# ---
+export ROBOMONGO_CMAKE_PREFIX_PATH="$PROJECT_DIR/Qt5.9.3/5.9.3/gcc_64/;$PROJECT_DIR/robo-shell;$PROJECT_DIR/openssl-1.0.2o"
+echo
+echo "-- set ROBOMONGO_CMAKE_PREFIX_PATH:"
+echo $ROBOMONGO_CMAKE_PREFIX_PATH    
+
+# --- DL pre-built openssl 
+echo; echo "-- gdown https://drive.google.com/uc?id=1nKOEgnklgZKAAQ1z4bfjj0Ejm0MOpAOd -q"
+gdown https://drive.google.com/uc?id=1nKOEgnklgZKAAQ1z4bfjj0Ejm0MOpAOd -q
+echo "-- tar xf openssl-1.0.2o-built-lin.tar.gz"
+tar xf openssl-1.0.2o-built-lin.tar.gz
+
+# --- DL pre-built Qt
+echo; echo "-- gdown https://drive.google.com/uc?id=1tvtXWvNkF1hxFYlVi5YB2AVEyysJU5Dc -q"
+gdown https://drive.google.com/uc?id=1tvtXWvNkF1hxFYlVi5YB2AVEyysJU5Dc -q
+echo "-- mkdir -p Qt5.9.3/5.9.3"
+mkdir -p Qt5.9.3/5.9.3
+echo "-- tar xf qt_5.9.3_gcc_64.tar.gz -C Qt5.9.3/5.9.3"
+tar xf qt_5.9.3_gcc_64.tar.gz -C Qt5.9.3/5.9.3
+
+# --- DL pre-built robo-shell
+echo; echo "-- gdown https://drive.google.com/uc?id=15JrsRiotDE0NZx6eV-YySRH6tupiVCiK -q"
+gdown https://drive.google.com/uc?id=15JrsRiotDE0NZx6eV-YySRH6tupiVCiK -q
+echo "-- git clone robo-shell... "
+git clone https://github.com/paralect/robomongo-shell.git -q
+echo "-- mv robomongo-shell robo-shell"
+mv robomongo-shell robo-shell
+echo "-- mkdir -p robo-shell/build"
+mkdir -p robo-shell/build
+echo "-- tar xf robo-shell-4.2-lin-opt.tar.gz -C robo-shell/build"
+tar xf robo-shell-4.2-lin-opt.tar.gz -C robo-shell/build
+
+# ---
+echo; echo "-- bin/configure_scan-build"
+bin/configure_scan-build
+
+echo; echo "-- bin/build_scan-build"
+bin/build_scan-build
+
+# ---
+echo; echo "-- free -m"
+free -m
+
+#### ---------- Block comment end
+END
+
+# --------------------------------- Cheatsheet
+# echo "-- ls -lh"
+# ls -lh
+
+#### ---------- Block_Comment_Start
+: <<'END'
+#### ---------- Block_Comment_End
+END

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+echo
+echo "---------- Starting bin/ci_temp"
+
+echo "-- which clang++"
+which clang++
